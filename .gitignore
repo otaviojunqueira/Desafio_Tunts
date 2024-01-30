@@ -1,0 +1,8 @@
+# Virtual Environment
+venv/
+
+# Python env
+.env
+
+# Credentials
+credentials.json

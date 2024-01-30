@@ -20,7 +20,7 @@ _Principais Funcionalidades:_
 
 - As informações atualizadas são refletidas diretamente na planilha do Google Sheets.
 
-**4-registro de Logs no Terminal:**
+**4-Registro de Logs no Terminal:**
 
 - Mensagens de log são exibidas no terminal para acompanhar as operações realizadas durante a execução do script.
 

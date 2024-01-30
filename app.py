@@ -3,21 +3,21 @@ import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
 
 
-# Autorizar a edição pela API do Google
+# Authorize editing via Google API
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 credentials = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope) # type: ignore
 gc = gspread.authorize(credentials) # type: ignore
 
-# URL da planilha
+# url worsheet
 url_worksheet = "https://docs.google.com/spreadsheets/d/1H82dsamDTJp_I5jgYXVQBratIR-wknJOoWrxP_G9UIo/edit#gid=0"
 worksheets1 = gc.open_by_url(url_worksheet).sheet1
 
-# Obter todos os valores da tabela
+# Get all values ​​from the table
 data = worksheets1.get_all_values()
-# Armazenar todos os valores da tabela em um DataFrame
+# Store all table values ​​in a DataFrame
 pandasDF = pd.DataFrame(data)
-# Delimitar a tabela
+# Delimit the table
 student = pandasDF[3:30]
 
 for i in range(0, 24):
